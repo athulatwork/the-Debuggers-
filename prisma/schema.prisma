@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Voter  {
+ id        Int      @id @default(autoincrement())
+  name      String        // column
+  age       Int           // column
+  gender    String        // column
+  address   String        // column
+  voterId   String   @unique
+  status    String   @default("Active")
+  createdAt DateTime @default(now())
+}
